@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>فاتورة المبيعات</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- رأس الصفحة -->
+
+    <div class="top-bar">
+
+        <div class="logo">
+            🧾 فاتورة المبيعات
+        </div>
+
+        <div class="user-box">
+
+            <button
+                class="logout-btn"
+                onclick="window.location.href='dashboard.html'">
+
+                ⬅ العودة للرئيسية
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="tabs">
+
+        <a href="pharmacy-sales.html" class="tab-btn active">
+            🧾 فاتورة المبيعات
+        </a>
+
+        <a href="pharmacy-return.html" class="tab-btn">
+            ↩️ فاتورة الاسترجاع
+        </a>
+
+    </div>
+
+    <!-- شريط الأدوات -->
+
+    <div class="toolbar">
+
+        <button class="btn import">
+            📥 استيراد Excel
+        </button>
+
+        <button class="btn export">
+            📤 تصدير Excel
+        </button>
+
+        <button class="btn pdf">
+            📄 تصدير PDF
+        </button>
+
+    </div>
+
+    <!-- بيانات الفاتورة -->
+
+    <div class="card">
+
+        <div class="card-title">
+            🧾 بيانات الفاتورة
+        </div>
+
+        <div class="form-grid">
+
+            <div class="field">
+
+                <label>رقم الفاتورة</label>
+
+                <input type="text">
+
+            </div>
+
+            <div class="field">
+
+                <label>تاريخ الفاتورة</label>
+
+                <input type="date">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- بيانات العميل -->
+
+<div class="card">
+
+    <div class="card-title">
+        🏥 بيانات العميل
+    </div>
+
+    <div class="form-grid">
+
+        <div class="field">
+            <label>الصيدلية</label>
+            <input type="text" placeholder="ابحث عن الصيدلية">
+        </div>
+
+        <div class="field">
+            <label>المذخر المجهز</label>
+            <select>
+                <option>اختر المذخر</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>المندوب</label>
+            <input type="text" readonly>
+        </div>
+
+        <div class="field">
+            <label>المحافظة</label>
+            <input type="text" readonly>
+        </div>
+
+        <div class="field">
+            <label>المنطقة</label>
+            <input type="text" readonly>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- المنتج -->
+
+<div class="card product-card">
+
+    <div class="card-title product-header">
+
+        <span class="title-text">
+            💊 المنتج
+        </span>
+
+        <div class="dropdown">
+
+            <button
+                type="button"
+                class="dropdown-btn"
+                id="tableViewBtn">
+
+                ⚙️ طريقة عرض الجدول
+
+            </button>
+
+            <div
+                class="dropdown-menu"
+                id="tableViewMenu">
+
+                <label><input type="checkbox" data-column="0" checked> كود المادة</label>
+                <label><input type="checkbox" data-column="1" checked> اسم المادة</label>
+                <label><input type="checkbox" data-column="2" checked> الكمية</label>
+                <label><input type="checkbox" data-column="3" checked> عرض البيع</label>
+                <label><input type="checkbox" data-column="4" checked> طلب عرض</label>
+                <label><input type="checkbox" data-column="5" checked> المسؤول</label>
+                <label><input type="checkbox" data-column="6" checked> مكان صرف البونص</label>
+                <label><input type="checkbox" data-column="7" checked> الكمية المجانية</label>
+                <label><input type="checkbox" data-column="8" checked> السعر</label>
+                <label><input type="checkbox" data-column="9" checked> القيمة</label>
+                <label><input type="checkbox" data-column="10" checked> الاكسباير</label>
+                <label><input type="checkbox" data-column="11" checked> رقم الوجبة</label>
+                <label><input type="checkbox" data-column="12" checked> الشركة</label>
+                <label><input type="checkbox" data-column="13" checked> الاسم العلمي</label>
+                <label><input type="checkbox" data-column="14" checked> الشكل الصيدلاني</label>
+                <label><input type="checkbox" data-column="15" checked> بلد المنشأ</label>
+                <label><input type="checkbox" data-column="16" checked> تعبئة الكارتون</label>
+
+                <hr>
+
+                <button type="button" class="save-view">
+                    ✔ حفظ
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="form-grid">
+
+        <div class="field" data-field="0">
+            <label>💊 كود المادة</label>
+            <input type="text">
+        </div>
+
+        <div class="field" data-field="1">
+            <label>💊 اسم المادة</label>
+            <input type="text">
+        </div>
+
+        <div class="field" data-field="2">
+            <label>📦 الكمية</label>
+            <input type="number">
+        </div>
+
+        <div class="field" data-field="3">
+            <label>🎁 عرض البيع</label>
+            <input type="text">
+        </div>
+
+        <div class="field" data-field="4">
+            <label>🎁 طلب عرض</label>
+            <input type="text">
+        </div>
+
+        <div class="field" data-field="5">
+            <label>👤 مسؤول الموافقة</label>
+            <select>
+                <option>اختر المسؤول</option>
+                <option>قائد الفريق</option>
+                <option>مسؤول المبيعات</option>
+            </select>
+        </div>
+
+        <div class="field" data-field="6">
+            <label>🎁 مكان صرف البونص</label>
+            <select>
+                <option>اختر مكان الصرف</option>
+                <option>الشركة</option>
+                <option>المذخر</option>
+                <option>الإعلام الدوائي</option>
+            </select>
+        </div>
+
+        <div class="field" data-field="7">
+            <label>🎁 الكمية المجانية</label>
+            <input type="number">
+        </div>
+
+        <div class="field" data-field="8">
+            <label>💵 سعر البيع</label>
+            <input type="text" readonly>
+        </div>
+
+        <div class="field" data-field="9">
+            <label>💵 قيمة البيع</label>
+            <input type="number">
+        </div>
+
+        <div class="field" data-field="10">
+            <label>⏳ الاكسباير</label>
+            <input type="date">
+        </div>
+
+        <div class="field" data-field="11">
+            <label>🧾 رقم الوجبة</label>
+            <input type="text">
+        </div>
+
+        <div class="field" data-field="12">
+            <label>🏢 الشركة</label>
+            <input type="text" readonly>
+        </div>
+
+        <div class="field" data-field="13">
+            <label>🧪 الاسم العلمي</label>
+            <input type="text" readonly>
+        </div>
+
+        <div class="field" data-field="14">
+            <label>💊 الشكل الصيدلاني</label>
+            <input type="text" readonly>
+        </div>
+
+        <div class="field" data-field="15">
+            <label>🌍 بلد المنشأ</label>
+            <input type="text" readonly>
+        </div>
+
+        <div class="field" data-field="16">
+            <label>📦 تعبئة الكارتون</label>
+            <input type="text" readonly>
+        </div>
+
+    </div>
+
+    <div class="product-actions">
+
+        <button class="btn import">
+            ➕ إضافة المنتج إلى الفاتورة
+        </button>
+
+    </div>
+
+</div>
+<!-- جدول المنتجات -->
+
+<div class="card">
+
+    <div class="card-title product-header">
+
+    <span class="title-text">
+        📋 منتجات الفاتورة
+    </span>
+
+    <div class="dropdown">
+
+        <button
+            type="button"
+            class="dropdown-btn"
+            id="invoiceTableViewBtn">
+
+            ⚙️ طريقة عرض الفاتورة
+
+        </button>
+
+        <div
+            class="dropdown-menu"
+            id="invoiceTableViewMenu">
+
+            <label><input type="checkbox" data-column="0" checked> كود المادة</label>
+            <label><input type="checkbox" data-column="1" checked> اسم المادة</label>
+            <label><input type="checkbox" data-column="2" checked> الكمية</label>
+            <label><input type="checkbox" data-column="3" checked> عرض البيع</label>
+            <label><input type="checkbox" data-column="4" checked> طلب عرض</label>
+            <label><input type="checkbox" data-column="5" checked> المسؤول</label>
+            <label><input type="checkbox" data-column="6" checked> الكمية المجانية</label>
+            <label><input type="checkbox" data-column="7" checked> السعر</label>
+            <label><input type="checkbox" data-column="8" checked> القيمة</label>
+            <label><input type="checkbox" data-column="9" checked> الاكسباير</label>
+            <label><input type="checkbox" data-column="10" checked> رقم الوجبة</label>
+            <label><input type="checkbox" data-column="11" checked> الشركة</label>
+            <label><input type="checkbox" data-column="12" checked> الاسم العلمي</label>
+            <label><input type="checkbox" data-column="13" checked> الشكل الصيدلاني</label>
+            <label><input type="checkbox" data-column="14" checked> بلد المنشأ</label>
+            <label><input type="checkbox" data-column="15" checked> تعبئة الكارتون</label>
+
+            <hr>
+
+            <button type="button" class="save-invoice-table-view">
+                ✔ حفظ
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="table-container">
+
+        <table id="invoiceProductsTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>كود المادة</th>
+                    <th>اسم المادة</th>
+                    <th>الكمية</th>
+                    <th>عرض البيع</th>
+                    <th>طلب عرض</th>
+                    <th>المسؤول</th>
+                    <th>الكمية المجانية</th>
+                    <th>السعر</th>
+                    <th>القيمة</th>
+                    <th>الاكسباير</th>
+                    <th>رقم الوجبة</th>
+                    <th>الشركة</th>
+                    <th>الاسم العلمي</th>
+                    <th>الشكل الصيدلاني</th>
+                    <th>بلد المنشأ</th>
+                    <th>تعبئة الكارتون</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- ملخص الفاتورة -->
+
+<div class="card">
+
+    <div class="card-title">
+        💰 ملخص الفاتورة
+    </div>
+
+    <div class="form-grid">
+
+        <div class="field">
+    <label>مجموع الفاتورة</label>
+    <input type="text" readonly>
+</div>
+
+<div class="field">
+    <label>خصم الفاتورة</label>
+    <input type="text">
+</div>
+
+<div class="field">
+    <label>المجموع بعد الخصم</label>
+    <input type="text" readonly>
+</div>
+
+<div class="field">
+    <label>الدين السابق</label>
+    <input type="text" readonly>
+</div>
+
+<div class="field">
+    <label>الدين الكلي</label>
+    <input type="text" readonly>
+</div>
+
+<div class="field">
+    <label>السائق</label>
+    <select>
+        <option>اختر السائق</option>
+    </select>
+</div>
+
+<div class="field full-width">
+    <label>ملاحظات</label>
+    <textarea rows="4"></textarea>
+</div>
+
+    </div>
+
+</div>
+
+
+<!-- أزرار العمليات -->
+
+<div class="actions">
+
+    <button class="btn import">
+        💾 حفظ الفاتورة
+    </button>
+
+    <button class="btn pdf">
+        ❌ إلغاء
+    </button>
+
+</div>
+
+</div>
+<script>
+
+const btn = document.getElementById("tableViewBtn");
+const menu = document.getElementById("tableViewMenu");
+
+btn.onclick = function(e){
+    e.stopPropagation();
+    menu.classList.toggle("show");
+};
+
+document.addEventListener("click", function(e){
+    if(!menu.contains(e.target) && e.target !== btn){
+        menu.classList.remove("show");
+    }
+});
+
+menu.addEventListener("click", function(e){
+    e.stopPropagation();
+});
+
+// =========================
+// حفظ طريقة العرض
+// =========================
+
+const saveBtn = document.querySelector(".save-view");
+
+saveBtn.addEventListener("click", () => {
+
+    const settings = [];
+
+    document
+        .querySelectorAll("#tableViewMenu input[type='checkbox']")
+        .forEach((box) => {
+
+            settings.push({
+                column: box.dataset.column,
+                checked: box.checked
+            });
+
+        });
+
+    settings.forEach(item => {
+
+        const field = document.querySelector(
+            '.field[data-field="' + item.column + '"]'
+        );
+
+        if (!field) return;
+
+        field.style.display = item.checked ? "" : "none";
+
+    });
+
+    localStorage.setItem(
+        "salesInvoiceTableView",
+        JSON.stringify(settings)
+    );
+
+    alert("تم حفظ طريقة العرض بنجاح");
+
+    menu.classList.remove("show");
+
+});
+
+// =========================
+// استرجاع طريقة العرض
+// =========================
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const saved = JSON.parse(
+        localStorage.getItem("salesInvoiceTableView")
+    );
+
+    if (!saved) return;
+
+    const boxes = document.querySelectorAll(
+        "#tableViewMenu input[type='checkbox']"
+    );
+
+    saved.forEach((item) => {
+
+        boxes.forEach((box) => {
+
+            if (box.dataset.column === item.column) {
+
+                box.checked = item.checked;
+
+                const field = document.querySelector(
+                    '.field[data-field="' + item.column + '"]'
+                );
+
+                if (field) {
+                    field.style.display = item.checked ? "" : "none";
+                }
+
+            }
+
+        });
+
+    });
+
+});
+// =========================
+// قائمة طريقة عرض الفاتورة
+// =========================
+
+const invoiceBtn = document.getElementById("invoiceTableViewBtn");
+const invoiceMenu = document.getElementById("invoiceTableViewMenu");
+
+invoiceBtn.onclick = function(e){
+    e.stopPropagation();
+    invoiceMenu.classList.toggle("show");
+};
+
+document.addEventListener("click", function(e){
+    if(!invoiceMenu.contains(e.target) && e.target !== invoiceBtn){
+        invoiceMenu.classList.remove("show");
+    }
+});
+
+invoiceMenu.addEventListener("click", function(e){
+    e.stopPropagation();
+});
+
+const saveInvoiceBtn = document.querySelector(".save-invoice-table-view");
+
+saveInvoiceBtn.addEventListener("click", () => {
+
+    const settings = [];
+
+    document
+        .querySelectorAll("#invoiceTableViewMenu input[type='checkbox']")
+        .forEach(box => {
+
+            settings.push({
+                column: box.dataset.column,
+                checked: box.checked
+            });
+
+        });
+
+    const table = document.getElementById("invoiceProductsTable");
+
+    settings.forEach(item => {
+
+        table.querySelectorAll("tr").forEach(row => {
+
+            const cell = row.querySelectorAll("th,td")[item.column];
+
+            if(cell){
+                cell.style.display = item.checked ? "" : "none";
+            }
+
+        });
+
+    });
+
+    localStorage.setItem(
+        "salesInvoiceProductsView",
+        JSON.stringify(settings)
+    );
+
+    alert("تم حفظ طريقة العرض بنجاح");
+
+    invoiceMenu.classList.remove("show");
+
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const saved = JSON.parse(
+        localStorage.getItem("salesInvoiceProductsView")
+    );
+
+    if(!saved) return;
+
+    document
+        .querySelectorAll("#invoiceTableViewMenu input[type='checkbox']")
+        .forEach(box => {
+
+            const item = saved.find(x => x.column === box.dataset.column);
+
+            if(item){
+                box.checked = item.checked;
+            }
+
+        });
+
+    const table = document.getElementById("invoiceProductsTable");
+
+    saved.forEach(item => {
+
+        table.querySelectorAll("tr").forEach(row => {
+
+            const cell = row.querySelectorAll("th,td")[item.column];
+
+            if(cell){
+                cell.style.display = item.checked ? "" : "none";
+            }
+
+        });
+
+    });
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>المستخدمون</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<div class="top-bar">
+
+    <div class="logo">
+
+        👥 المستخدمون
+
+    </div>
+
+    <div class="user-box">
+
+        <button
+        class="logout-btn"
+        onclick="window.location.href='dashboard.html'">
+
+            ⬅ العودة للرئيسية
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="section-card">
+
+    <h2>👥 المستخدمون</h2>
+
+    <div class="user-data-box">
+
+        <input
+        type="text"
+        id="userCode"
+        value="USR000001"
+        readonly>
+
+        <div class="suggestion-wrapper">
+
+            <input
+            type="text"
+            id="fullName"
+            placeholder="الاسم الكامل"
+            autocomplete="off">
+
+            <div
+            id="userSuggestions"
+            class="suggestions-box">
+
+            </div>
+
+        </div>
+
+        <input
+        type="text"
+        id="userName"
+        placeholder="اسم المستخدم">
+
+        <input
+        type="password"
+        id="userPassword"
+        placeholder="كلمة المرور">
+
+        <input
+        type="text"
+        id="userPhone"
+        placeholder="رقم الهاتف">
+
+        <select id="userProvince">
+
+            <option value="">
+                📍 المحافظة
+            </option>
+
+            <option>بغداد</option>
+            <option>البصرة</option>
+            <option>كربلاء</option>
+            <option>النجف</option>
+            <option>بابل</option>
+            <option>واسط</option>
+            <option>الديوانية</option>
+            <option>ذي قار</option>
+            <option>ميسان</option>
+            <option>المثنى</option>
+            <option>الأنبار</option>
+            <option>ديالى</option>
+            <option>صلاح الدين</option>
+            <option>نينوى</option>
+            <option>كركوك</option>
+            <option>أربيل</option>
+            <option>دهوك</option>
+            <option>السليمانية</option>
+
+        </select>
+
+        <input
+        type="date"
+        id="userExpireDate">
+
+    </div>
+
+    <div class="action-buttons">
+
+        <button id="saveUserBtn">
+
+            💾 حفظ المستخدم
+
+        </button>
+
+    </div>
+
+    <div
+    id="userResult"
+    class="last-record">
+
+    </div>
+
+</div>
+
+<script src="../app.js"></script>
+
+</body>
+
+</html>

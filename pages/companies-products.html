@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الشركات والمنتجات</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="top-bar">
+
+    <div class="logo">
+        🏢 الشركات والمنتجات
+    </div>
+
+    <div class="user-box">
+
+        <button class="logout-btn"
+        onclick="window.location.href='dashboard.html'">
+
+            ⬅ العودة للرئيسية
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="page-container">
+
+    <!-- التبويبات -->
+
+    <div class="tabs">
+
+    <button id="companiesTab"
+    class="tab-btn active-tab">
+
+        🏢 الشركات
+
+    </button>
+
+    <button id="productsTab"
+    class="tab-btn">
+
+        💊 المنتجات
+
+    </button>
+
+    <button id="generalOffersTab"
+    class="tab-btn">
+
+        🎁 العروض العامة
+
+    </button>
+
+    <button id="specialOffersTab"
+    class="tab-btn">
+
+        🎁 العروض الخاصة
+
+    </button>
+
+</div>
+
+
+   <!-- الشركات -->
+
+<div id="companiesSection" class="section-card">
+
+    <h2>🏢 الشركات</h2>
+
+    <div class="action-buttons">
+
+        <button id="importCompaniesBtn">
+            📥 استيراد Excel
+        </button>
+
+        <button id="exportCompaniesBtn">
+            📤 تصدير Excel
+        </button>
+
+    </div>
+
+    <input
+    type="file"
+    id="companiesExcelFile"
+    accept=".xlsx,.xls"
+    style="display:none;">
+
+    <div class="company-box">
+
+        <h3>🏢 بيانات الشركة</h3>
+
+        <div class="company-field">
+
+            <label>
+                كود الشركة
+            </label>
+
+            <input
+            type="text"
+            id="companyCode"
+            value="CO000001"
+            readonly>
+
+        </div>
+
+        <div class="company-field">
+
+            <label>
+                اسم الشركة
+            </label>
+
+            <div class="suggestion-wrapper">
+
+                <input
+                type="text"
+                id="companyName">
+
+                <div
+                id="companySuggestions"
+                class="suggestions-box">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="company-field">
+
+            <label>
+                🌍 الدولة المصنعة
+            </label>
+
+            <input
+            list="countriesList"
+            id="companyOrigin">
+
+            <datalist id="countriesList">
+
+<option value="العراق">
+<option value="الأردن">
+<option value="الإمارات العربية المتحدة">
+<option value="السعودية">
+<option value="الكويت">
+<option value="قطر">
+<option value="البحرين">
+<option value="عمان">
+<option value="اليمن">
+<option value="سوريا">
+<option value="لبنان">
+<option value="فلسطين">
+<option value="مصر">
+<option value="ليبيا">
+<option value="تونس">
+<option value="الجزائر">
+<option value="المغرب">
+<option value="موريتانيا">
+<option value="السودان">
+<option value="الصومال">
+<option value="جيبوتي">
+<option value="جزر القمر">
+
+<option value="تركيا">
+<option value="إيران">
+<option value="أفغانستان">
+<option value="باكستان">
+<option value="الهند">
+<option value="بنغلادش">
+<option value="نيبال">
+<option value="سريلانكا">
+<option value="الصين">
+<option value="اليابان">
+<option value="كوريا الجنوبية">
+<option value="كوريا الشمالية">
+<option value="تايلند">
+<option value="ماليزيا">
+<option value="سنغافورة">
+<option value="إندونيسيا">
+<option value="فيتنام">
+<option value="الفلبين">
+
+<option value="ألمانيا">
+<option value="فرنسا">
+<option value="إيطاليا">
+<option value="إسبانيا">
+<option value="البرتغال">
+<option value="هولندا">
+<option value="بلجيكا">
+<option value="سويسرا">
+<option value="النمسا">
+<option value="الدنمارك">
+<option value="السويد">
+<option value="النرويج">
+<option value="فنلندا">
+<option value="بولندا">
+<option value="اليونان">
+<option value="التشيك">
+<option value="المجر">
+<option value="رومانيا">
+<option value="بلغاريا">
+<option value="صربيا">
+<option value="كرواتيا">
+<option value="سلوفاكيا">
+<option value="سلوفينيا">
+<option value="أوكرانيا">
+<option value="روسيا">
+<option value="المملكة المتحدة">
+<option value="أيرلندا">
+
+<option value="الولايات المتحدة">
+<option value="كندا">
+<option value="المكسيك">
+
+<option value="البرازيل">
+<option value="الأرجنتين">
+<option value="تشيلي">
+<option value="كولومبيا">
+<option value="بيرو">
+<option value="فنزويلا">
+
+<option value="أستراليا">
+<option value="نيوزيلندا">
+
+<option value="جنوب أفريقيا">
+<option value="نيجيريا">
+<option value="كينيا">
+<option value="إثيوبيا">
+<option value="غانا">
+
+</datalist>
+
+        </div>
+
+    </div>
+
+    <button id="saveCompanyBtn">
+
+        💾 حفظ / تحديث
+
+    </button>
+
+    <div
+    id="companyResult"
+    class="last-record">
+
+    </div>
+
+</div>
+
+    <!-- المنتجات -->
+
+<div id="productsSection"
+class="section-card"
+style="display:none;">
+
+    <h2>💊 المنتجات</h2>
+
+    <div class="action-buttons">
+
+        <button id="importProductsBtn">
+            📥 استيراد Excel
+        </button>
+
+        <button id="exportProductsBtn">
+            📤 تصدير Excel
+        </button>
+
+    </div>
+
+    <input
+    type="file"
+    id="productsExcelFile"
+    accept=".xlsx,.xls"
+    style="display:none;">
+
+    <div class="product-box">
+
+        <h3>💊 بيانات المنتج</h3>
+
+        <div class="product-grid">
+
+            <div class="product-field">
+
+                <label>
+                    كود المنتج
+                </label>
+
+                <input
+                type="text"
+                id="productCode"
+                value="PR000001"
+                readonly>
+
+            </div>
+
+            <div class="product-field">
+
+                <label>
+                    اسم المنتج
+                </label>
+
+                <div class="suggestion-wrapper">
+
+                    <input
+                    type="text"
+                    id="productName">
+
+                    <div
+                    id="productSuggestions"
+                    class="suggestions-box">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="product-field">
+
+                <label>
+                    الاسم العلمي
+                </label>
+
+                <input
+                type="text"
+                id="scientificName">
+
+            </div>
+
+            <div class="product-field">
+
+                <label>
+                    الشركة
+                </label>
+
+                <div class="suggestion-wrapper">
+
+                    <input
+                    type="text"
+                    id="companySelect">
+
+                    <div
+                    id="companyProductSuggestions"
+                    class="suggestions-box">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="product-field">
+
+                <label>
+                    🌍 الدولة المصنعة
+                </label>
+
+                <input
+                type="text"
+                id="productOrigin">
+
+            </div>
+
+            <div class="product-field">
+
+                <label>
+                    الشكل الصيدلاني
+                </label>
+
+                <select id="dosageForm">
+
+    <option value="">
+        اختر الشكل الصيدلاني
+    </option>
+
+    <option>Tablet - أقراص</option>
+    <option>Film Coated Tablet - أقراص مغلفة</option>
+    <option>Chewable Tablet - أقراص للمضغ</option>
+    <option>Effervescent Tablet - أقراص فوارة</option>
+    <option>Sublingual Tablet - أقراص تحت اللسان</option>
+
+    <option>Capsule - كبسول</option>
+    <option>Soft Gel Capsule - كبسول جيلاتيني</option>
+
+    <option>Syrup - شراب</option>
+    <option>Suspension - معلق</option>
+    <option>Oral Solution - محلول فموي</option>
+    <option>Oral Drops - قطرات فموية</option>
+
+    <option>Injection - حقن</option>
+    <option>IV Infusion - تسريب وريدي</option>
+    <option>Ampoule - أمبول</option>
+    <option>Vial - فيال</option>
+    <option>Prefilled Syringe - حقنة جاهزة</option>
+
+    <option>Eye Drops - قطرات عينية</option>
+    <option>Eye Ointment - مرهم عيني</option>
+
+    <option>Ear Drops - قطرات أذن</option>
+
+    <option>Nasal Drops - قطرات أنفية</option>
+    <option>Nasal Spray - بخاخ أنفي</option>
+
+    <option>Inhaler - بخاخ استنشاق</option>
+    <option>Nebulizer Solution - محلول تبخير</option>
+
+    <option>Cream - كريم</option>
+    <option>Ointment - مرهم</option>
+    <option>Gel - جل</option>
+    <option>Lotion - لوشن</option>
+    <option>Foam - رغوة</option>
+
+    <option>Suppository - تحميلة</option>
+    <option>Vaginal Suppository - تحميلة مهبلية</option>
+
+    <option>Powder - مسحوق</option>
+    <option>Sachet - أكياس</option>
+    <option>Granules - حبيبات</option>
+
+    <option>Patch - لصقة دوائية</option>
+
+    <option>Shampoo - شامبو طبي</option>
+
+    <option>Mouth Wash - غسول فم</option>
+
+    <option>Medical Device - مستلزم طبي</option>
+    <option>Nutritional Supplement - مكمل غذائي</option>
+    <option>Herbal Product - مستحضر عشبي</option>
+
+    <option>مواد عامة</option>
+    <option>أخرى</option>
+
+</select>
+
+            </div>
+
+            <div class="product-field">
+
+                <label>
+                    🚚 اسم المورد
+                </label>
+
+                <input
+                type="text"
+                id="supplierName">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="action-buttons">
+
+        <button id="saveProductBtn">
+
+            💾 حفظ / تحديث
+
+        </button>
+
+    </div>
+
+    <div
+    id="productResult"
+    class="last-record">
+
+    </div>
+
+</div>
+<!-- نافذة إضافة شركة سريعة -->
+
+<div
+id="quickCompanyModal"
+class="modal"
+style="display:none;">
+
+    <div class="modal-content">
+
+        <h3>
+
+            🏢 إضافة شركة جديدة
+
+        </h3>
+
+        <input
+        type="text"
+        id="quickCompanyCode"
+        readonly>
+
+        <input
+        type="text"
+        id="quickCompanyName"
+        placeholder="اسم الشركة"
+        autocomplete="off">
+
+        <button id="saveQuickCompanyBtn">
+
+            💾 حفظ الشركة
+
+        </button>
+
+    </div>
+
+</div>
+<!-- العروض العامة -->
+
+<div
+id="generalOffersSection"
+class="section-card"
+style="display:none;">
+
+    <h2>🎁 العروض العامة</h2>
+
+    <div class="action-buttons">
+
+        <button id="importOffersBtn">
+            📥 استيراد Excel
+        </button>
+
+        <button id="exportOffersBtn">
+            📤 تصدير Excel
+        </button>
+
+        <button id="exportOffersPdfBtn">
+            📄 تصدير PDF
+        </button>
+
+        <button id="offerViewBtn">
+            ⚙️ طريقة العرض
+        </button>
+
+    </div>
+
+    <input
+    type="file"
+    id="offersExcelFile"
+    accept=".xlsx,.xls"
+    style="display:none;">
+
+    <!-- أدوات العرض -->
+
+    <div class="offers-tools">
+
+        <h3>🟩  أدوات عرض PDF </h3>
+
+        <div class="offers-tools-grid">
+
+            <div class="filter-group">
+    
+    <select id="offerDate">
+        <option selected disabled>اختر تاريخ العرض</option>
+        <option>تموز 2026</option>
+        <option>آب 2026</option>
+        <option>أيلول 2026</option>
+        <option>تشرين الأول 2026</option>
+        <option>تشرين الثاني 2026</option>
+        <option>كانون الأول 2026</option>
+    </select>
+</div>
+
+            <select id="filterCompany">
+
+                <option value="">
+                    🏢 الشركة
+                </option>
+
+            </select>
+
+            <select id="filterProvince">
+
+                <option value="">
+                    📍 المحافظة
+                </option>
+
+            </select>
+
+            <select id="filterArea">
+
+                <option value="">
+                    🗺 المنطقة
+                </option>
+
+            </select>
+
+            <select id="filterUser">
+
+                <option value="">
+                    👤 المندوب
+                </option>
+
+            </select>
+
+            <select id="offersViewType">
+
+                <option value="table">
+                    ⚙️ طريقة العرض
+                </option>
+
+                <option value="table">
+                    جدول
+                </option>
+
+                <option value="cards">
+                    بطاقات
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- بطاقة العرض الرئيسية -->
+
+    <div class="offer-data-box">
+
+        <h3>🟦 بيانات العرض لشهر تموز 2026</h3>
+
+        <!-- بيانات مادة العرض -->
+
+        <div class="offer-material-box">
+
+            <h3>💊 بيانات مادة العرض</h3>
+
+            <div class="offer-material-grid">
+
+        <div class="offer-material-field">
+
+            <label>
+                كود المنتج
+            </label>
+
+            <input
+            type="text"
+            id="offerProductCode"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                اسم المنتج
+            </label>
+
+            <input
+            type="text"
+            id="offerProductName"
+            placeholder="اسم المنتج">
+
+            <div
+            id="offerProductSuggestions"
+            class="suggestions-box">
+
+            </div>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                الاسم العلمي
+            </label>
+
+            <input
+            type="text"
+            id="offerScientific"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                الشركة
+            </label>
+
+            <input
+            type="text"
+            id="offerCompany"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                🌍 الدولة المصنعة
+            </label>
+
+            <input
+            type="text"
+            id="offerOrigin"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                الشكل الصيدلاني
+            </label>
+
+            <input
+            type="text"
+            id="offerForm"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                🚚 اسم المورد
+            </label>
+
+            <input
+            type="text"
+            id="offerSupplier"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                🏷️ نوع العرض
+            </label>
+
+            <input
+            type="text"
+            id="offerType"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                💰 سعر الشراء
+            </label>
+
+            <input
+            type="text"
+            id="offerBuyPrice"
+            readonly>
+
+        </div>
+
+        <div class="offer-material-field">
+
+            <label>
+                💰 سعر البيع
+            </label>
+
+            <input
+            type="text"
+            id="offerSellPrice"
+            readonly>
+
+        </div>
+
+       <div class="offer-material-field">
+
+    <label>
+        📍 المحافظة
+    </label>
+
+    <input
+    type="text"
+    id="offerProvince"
+    readonly>
+
+</div>
+
+        <div class="offer-material-field">
+
+            <label>
+                📅 تاريخ انتهاء العرض الحالي
+            </label>
+
+            <input
+            type="text"
+            id="currentOfferEndDate"
+            readonly>
+
+        </div>
+
+    </div>
+
+</div>
+    <h4>🎁 بيانات العرض الجديد</h4>
+
+<div class="offer-row">
+
+    <label>العدد الأول</label>
+
+    <input
+    type="number"
+    id="qty1"
+    min="0">
+
+    <label>العرض الأول</label>
+
+    <input
+    type="text"
+    id="offer1"
+    placeholder="+1 / 10%">
+
+</div>
+
+<div class="offer-row">
+
+    <label>العدد الثاني</label>
+
+    <input
+    type="number"
+    id="qty2"
+    min="0">
+
+    <label>العرض الثاني</label>
+
+    <input
+    type="text"
+    id="offer2"
+    placeholder="+2 / 15%">
+
+</div>
+
+<div class="offer-row">
+
+    <label>العدد الثالث</label>
+
+    <input
+    type="number"
+    id="qty3"
+    min="0">
+
+    <label>العرض الثالث</label>
+
+    <input
+    type="text"
+    id="offer3"
+    placeholder="+3 / 20%">
+
+</div>
+
+<div class="offer-row">
+
+    <label>العدد الرابع</label>
+
+    <input
+    type="number"
+    id="qty4"
+    min="0">
+
+    <label>العرض الرابع</label>
+
+    <input
+    type="text"
+    id="offer4"
+    placeholder="+4 / 25%">
+
+</div>
+
+   <h4>📅 تاريخ انتهاء العرض الجديد</h4>
+
+<input
+type="date"
+id="offerEndDate">
+
+<button id="saveOfferBtn">
+
+    ➕ إضافة للدفعة الحالية
+
+</button>
+
+<div
+id="offerResult"
+class="last-record">
+
+</div>
+
+</div>
+
+<h3>📦 الدفعة الحالية</h3>
+
+<table class="data-table">
+
+    <thead>
+
+        <tr>
+
+    <th>كود المنتج</th>
+
+    <th>اسم المنتج</th>
+
+    <th>الاسم العلمي</th>
+
+    <th>الشركة</th>
+
+    <th>الدولة المصنعة</th>
+
+    <th>الشكل الصيدلاني</th>
+
+    <th>سعر الشراء</th>
+
+    <th>سعر البيع</th>
+
+    <th>العدد الأول</th>
+
+    <th>العرض الأول</th>
+
+    <th>العدد الثاني</th>
+
+    <th>العرض الثاني</th>
+
+    <th>العدد الثالث</th>
+
+    <th>العرض الثالث</th>
+
+    <th>العدد الرابع</th>
+
+    <th>العرض الرابع</th>
+
+    <th>تاريخ انتهاء العرض الجديد</th>
+
+    <th>نوع العرض</th>
+
+     <th>المحافظة</th>
+
+     <th>اسم المورد</th>
+
+</tr>
+
+    </thead>
+
+    <tbody id="offersTableBody">
+
+    </tbody>
+
+</table>
+
+<button id="approveOffersBatchBtn">
+
+    ✅ اعتماد الدفعة
+
+</button>
+
+<h3>📋 آخر دفعة عروض</h3>
+
+<div id="lastOffersBatch">
+
+    لا توجد دفعات محفوظة
+
+</div>
+
+</div>
+
+<!-- العروض الخاصة -->
+
+<div id="specialOffersSection"
+class="section-card"
+style="display:none;">
+<h2>🎁 العروض الخاصة</h2>
+
+<div class="action-buttons">
+
+    <button id="specialExportPdfBtn">
+        📄 تصدير PDF
+    </button>
+
+    <button id="specialExportExcelBtn">
+        📤 تصدير Excel
+    </button>
+
+</div>
+
+<!-- أدوات عرض PDF -->
+
+<div class="offers-tools">
+
+    <h3>🟩 أدوات عرض PDF</h3>
+
+    <div class="offers-tools-grid">
+
+        <div class="filter-group">
+
+    <select id="offerDate">
+        <option selected disabled>اختر تاريخ العرض</option>
+        <option>تموز 2026</option>
+        <option>آب 2026</option>
+        <option>أيلول 2026</option>
+        <option>تشرين الأول 2026</option>
+        <option>تشرين الثاني 2026</option>
+        <option>كانون الأول 2026</option>
+    </select>
+</div>
+
+        <select id="specialFilterCompany">
+
+            <option value="">
+                🏢 الشركة
+            </option>
+
+        </select>
+
+        <select id="specialFilterProvince">
+
+            <option value="">
+                📍 المحافظة
+            </option>
+
+        </select>
+
+        <select id="specialFilterPharmacy">
+
+            <option value="">
+                🏥 الصيدلية
+            </option>
+
+        </select>
+
+        <select id="specialFilterUser">
+
+            <option value="">
+                👤 المندوب
+            </option>
+
+        </select>
+
+        <select id="specialViewType">
+
+            <option value="table">
+                ⚙️ طريقة العرض
+            </option>
+
+            <option value="table">
+                جدول
+            </option>
+
+            <option value="cards">
+                بطاقات
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+<!-- بطاقة العرض الرئيسية -->
+
+<div class="offer-data-box">
+
+<h3>🟦 بيانات العرض لشهر تموز 2026</h3>
+    <div class="offer-material-box">
+
+        <h3>💊 بيانات مادة العرض</h3>
+
+        <div class="offer-material-grid">
+        <div class="offer-material-field">
+
+    <label>
+        كود المنتج
+    </label>
+
+    <input
+    type="text"
+    id="specialProductCode"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        اسم المنتج
+    </label>
+
+    <input
+    type="text"
+    id="specialProductName"
+    placeholder="اسم المنتج">
+
+    <div
+    id="specialProductSuggestions"
+    class="suggestions-box">
+
+    </div>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        الاسم العلمي
+    </label>
+
+    <input
+    type="text"
+    id="specialScientific"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        الشركة
+    </label>
+
+    <input
+    type="text"
+    id="specialCompany"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        🌍 الدولة المصنعة
+    </label>
+
+    <input
+    type="text"
+    id="specialOrigin"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        الشكل الصيدلاني
+    </label>
+
+    <input
+    type="text"
+    id="specialForm"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        🚚 اسم المورد
+    </label>
+
+    <input
+    type="text"
+    id="specialSupplier"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        🏥 اسم الصيدلية
+    </label>
+
+    <input
+    type="text"
+    id="specialPharmacy"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        📍 المحافظة
+    </label>
+
+    <input
+    type="text"
+    id="specialProvince"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        👤 اسم المندوب
+    </label>
+
+    <input
+    type="text"
+    id="specialUser"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        💰 سعر الشراء
+    </label>
+
+    <input
+    type="text"
+    id="specialBuyPrice"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        💰 سعر البيع
+    </label>
+
+    <input
+    type="text"
+    id="specialSellPrice"
+    readonly>
+
+</div>
+
+<div class="offer-material-field">
+
+    <label>
+        📅 تاريخ انتهاء العرض الحالي
+    </label>
+
+    <input
+    type="text"
+    id="specialCurrentOfferEndDate"
+    readonly>
+
+</div>
+
+</div>
+
+</div>
+<h4>🎁 بيانات العرض الجديد</h4>
+
+<div class="offer-row">
+
+    <label>العدد الأول</label>
+
+    <input
+    type="number"
+    id="specialQty1"
+    min="0">
+
+    <label>العرض الأول</label>
+
+    <input
+    type="text"
+    id="specialOffer1"
+    placeholder="+1 / 10%">
+
+</div>
+
+<div class="offer-row">
+
+    <label>العدد الثاني</label>
+
+    <input
+    type="number"
+    id="specialQty2"
+    min="0">
+
+    <label>العرض الثاني</label>
+
+    <input
+    type="text"
+    id="specialOffer2"
+    placeholder="+2 / 15%">
+
+</div>
+
+<div class="offer-row">
+
+    <label>العدد الثالث</label>
+
+    <input
+    type="number"
+    id="specialQty3"
+    min="0">
+
+    <label>العرض الثالث</label>
+
+    <input
+    type="text"
+    id="specialOffer3"
+    placeholder="+3 / 20%">
+
+</div>
+
+<div class="offer-row">
+
+    <label>العدد الرابع</label>
+
+    <input
+    type="number"
+    id="specialQty4"
+    min="0">
+
+    <label>العرض الرابع</label>
+
+    <input
+    type="text"
+    id="specialOffer4"
+    placeholder="+4 / 25%">
+
+</div>
+
+<h4>📅 تاريخ انتهاء العرض الجديد</h4>
+
+<input
+type="date"
+id="specialOfferEndDate">
+
+<button id="saveSpecialOfferBtn">
+
+    ➕ إضافة للدفعة الحالية
+
+</button>
+
+<div
+id="specialOfferResult"
+class="last-record">
+
+</div>
+
+</div>
+
+<h3>📦 الدفعة الحالية</h3>
+
+<table class="data-table">
+
+    <thead>
+
+        <tr>
+
+    <th>كود المنتج</th>
+
+    <th>اسم المنتج</th>
+
+    <th>الاسم العلمي</th>
+
+    <th>الشركة</th>
+
+    <th>الدولة المصنعة</th>
+
+    <th>الشكل الصيدلاني</th>
+
+    <th>سعر الشراء</th>
+
+    <th>سعر البيع</th>
+
+    <th>العدد الأول</th>
+
+    <th>العرض الأول</th>
+
+    <th>العدد الثاني</th>
+
+    <th>العرض الثاني</th>
+
+    <th>العدد الثالث</th>
+
+    <th>العرض الثالث</th>
+
+    <th>العدد الرابع</th>
+
+    <th>العرض الرابع</th>
+
+    <th>تاريخ انتهاء العرض الجديد</th>
+
+    <th>اسم الصيدلية</th>
+
+    <th>المحافظة</th>
+
+    <th>اسم المندوب</th>
+
+    <th>اسم المورد</th>
+
+</tr>
+
+    </thead>
+
+    <tbody id="specialOffersTableBody">
+
+    </tbody>
+
+</table>
+
+<button id="approveSpecialOffersBatchBtn">
+
+    ✅ اعتماد الدفعة
+
+</button>
+
+<h3>📋 آخر دفعة عروض</h3>
+
+<div id="lastSpecialOffersBatch">
+
+    لا توجد دفعات محفوظة
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script src="../app.js"></script>
+
+</body>
+
+</html>

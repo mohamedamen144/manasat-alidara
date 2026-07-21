@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<script>
+
+if(
+    localStorage.getItem(
+        "loggedIn"
+    ) !== "true"
+){
+
+    window.location.href =
+    "login.html";
+
+}
+
+</script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+منصة الإدارة
+</title>
+
+<link rel="stylesheet"
+href="../style.css">
+
+</head>
+
+<body>
+
+<div class="top-bar">
+
+    <div class="logo">
+
+        💊 منصة الإدارة
+
+    </div>
+
+    <div class="user-box">
+
+        <span id="currentUserName">
+
+            👤 المستخدم
+
+        </span>
+
+        <button
+        class="logout-btn"
+        onclick="logout()">
+
+            🚪 تسجيل الخروج
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="menu">
+
+    <div class="card"
+    onclick="window.location.href='pharmacy-sales.html'">
+
+        <h3>
+            💊 مبيعات الصيدليات
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='depot-sales.html'">
+
+        <h3>
+            🏬 مبيعات المذاخر
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='company-stock.html'">
+
+        <h3>
+            📦 خزين الشركة
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='depot-stock.html'">
+
+        <h3>
+            🏬 خزين المذاخر
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='pharmacy-stock.html'">
+
+        <h3>
+            📦 خزين الصيدليات
+        </h3>
+
+    </div>
+
+       <div class="card"
+    onclick="window.location.href='products-offers.html'">
+
+        <h3>
+            🎁 العروض
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='targets.html'">
+
+        <h3>
+            🎯 الأهداف
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='reports.html'">
+
+        <h3>
+            📊 التقارير
+        </h3>
+
+</div>
+
+    <div class="card"
+    onclick="window.location.href='users.html'">
+
+        <h3>
+            👥 المستخدمون 
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='companies-products.html'">
+
+        <h3>
+            🏢 الشركات والمنتجات
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='areas.html'">
+
+        <h3>
+            🗺️ المناطق
+        </h3>
+
+    </div>
+
+    <div class="card"
+    onclick="window.location.href='customers.html'">
+
+        <h3>
+            🏥 إضافة عميل
+        </h3>
+
+    </div>
+    
+</div>
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+    let currentUser =
+
+    JSON.parse(
+
+        localStorage.getItem(
+            "currentUser"
+        )
+
+    );
+
+    if(
+
+        currentUser &&
+
+        currentUser.fullName
+
+    ){
+
+        document.getElementById(
+            "currentUserName"
+        ).innerHTML =
+
+        "👤 " +
+
+        currentUser.fullName;
+
+    }
+
+});
+
+</script>
+
+<script src="../app.js"></script>
+
+</body>
+
+</html>

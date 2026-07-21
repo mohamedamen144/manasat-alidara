@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> العروض </title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="top-bar">
+
+    <div class="logo">
+        🎁 العروض
+    </div>
+
+    <div class="user-box">
+
+        <button
+        class="logout-btn"
+        onclick="window.location.href='dashboard.html'">
+
+            ⬅ العودة للرئيسية
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="page-container">
+
+    <div class="section-card">
+
+        <div class="action-buttons">
+
+      <button id="importOffersBtn">
+    📥 استيراد Excel
+</button>
+
+<button id="exportOffersBtn">
+    📤 تصدير Excel
+</button>
+
+<button id="exportOffersPdfBtn">
+    📄 تصدير PDF
+</button>
+
+<button id="offerViewBtn">
+    ⚙️ طريقة العرض
+</button>
+
+<select id="offerCompanySelect">
+
+    <option value="">
+        🏢 اختر الشركة
+    </option>
+
+    <option value="ALL">
+        جميع الشركات
+    </option>
+
+</select>
+
+<select id="offerProvinceSelect">
+
+    <option value="">
+        📍 اختر المحافظة
+    </option>
+
+    <option value="ALL">
+        جميع المحافظات
+    </option>
+
+    <option>بغداد</option>
+    <option>البصرة</option>
+    <option>كربلاء</option>
+    <option>النجف</option>
+    <option>بابل</option>
+    <option>واسط</option>
+    <option>الديوانية</option>
+    <option>ذي قار</option>
+    <option>ميسان</option>
+    <option>المثنى</option>
+    <option>الأنبار</option>
+    <option>ديالى</option>
+    <option>صلاح الدين</option>
+    <option>نينوى</option>
+    <option>كركوك</option>
+    <option>أربيل</option>
+    <option>دهوك</option>
+    <option>السليمانية</option>
+
+</select>
+
+<select id="offerUserSelect">
+
+    <option value="">
+        👤 اختر المندوب
+    </option>
+
+    <option value="ALL">
+        جميع المندوبين
+    </option>
+
+</select>
+
+        <input
+        type="file"
+        id="offersExcelFile"
+        accept=".xlsx,.xls"
+        style="display:none;">
+
+        <input
+        type="text"
+        id="offerProductCode"
+        placeholder="كود المنتج"
+        readonly>
+
+        <input
+        type="text"
+        id="offerProductName"
+        placeholder="اسم المنتج">
+
+        <div
+        id="offerProductSuggestions"
+        class="suggestions-box">
+
+        </div>
+
+        <input
+        type="text"
+        id="offerScientific"
+        placeholder="الاسم العلمي"
+        readonly>
+
+        <input
+        type="text"
+        id="offerForm"
+        placeholder="الشكل الصيدلاني"
+        readonly>
+
+        <h3>🎁 العروض</h3>
+</div>
+
+<div class="offer-row">
+
+    <label>العدد الأول</label>
+    <input
+    type="number"
+    id="qty1"
+    value="0"
+    onfocus="if(this.value=='0')this.value=''"
+    onblur="if(this.value=='')this.value='0'">
+
+     <label>العرض الأول</label>
+    <input
+    type="text"
+    id="offer1"
+    value="0%"
+    onfocus="if(this.value=='0%')this.value='%'"
+    onblur="if(this.value=='')this.value='0%'">
+
+</div>
+
+<div class="offer-row">
+ <label>العدد الثاني</label>
+    <input
+    type="number"
+    id="qty2"
+    value="0"
+    onfocus="if(this.value=='0')this.value=''"
+    onblur="if(this.value=='')this.value='0'">
+
+     <label>العرض الثاني</label>
+    <input
+    type="text"
+    id="offer2"
+    value="0%"
+    onfocus="if(this.value=='0%')this.value='%'"
+    onblur="if(this.value=='')this.value='0%'">
+
+</div>
+
+<div class="offer-row">
+ <label>العدد الثالث</label>
+    <input
+    type="number"
+    id="qty3"
+    value="0"
+    onfocus="if(this.value=='0')this.value=''"
+    onblur="if(this.value=='')this.value='0'">
+
+     <label>العرض الثالث</label>
+    <input
+    type="text"
+    id="offer3"
+    value="0%"
+    onfocus="if(this.value=='0%')this.value='%'"
+    onblur="if(this.value=='')this.value='0%'">
+
+</div>
+
+<div class="offer-row">
+ <label>العدد الرابع</label>
+    <input
+    type="number"
+    id="qty4"
+    value="0"
+    onfocus="if(this.value=='0')this.value=''"
+    onblur="if(this.value=='')this.value='0'">
+
+     <label>العرض الرايع</label>
+    <input
+    type="text"
+    id="offer4"
+    value="0%"
+    onfocus="if(this.value=='0%')this.value='%'"
+    onblur="if(this.value=='')this.value='0%'">
+
+</div>
+
+        <h3>📅 تاريخ انتهاء العرض</h3>
+
+        <input
+        type="date"
+        id="offerEndDate">
+
+        <button id="saveOfferBtn">
+
+            💾 حفظ / تحديث
+
+        </button>
+
+        <div id="offerResult"
+        class="last-record">
+
+        </div>
+
+        <h3>📋 العروض المحفوظة</h3>
+
+        <table class="data-table">
+
+       <thead>
+
+    <tr>
+
+        <th>كود المنتج</th>
+
+        <th>اسم المنتج</th>
+
+        <th>الشركات</th>
+
+        <th>المحافظات</th>
+
+        <th>العدد1</th>
+        <th>العرض1</th>
+
+        <th>العدد2</th>
+        <th>العرض2</th>
+
+        <th>العدد3</th>
+        <th>العرض3</th>
+
+        <th>العدد4</th>
+        <th>العرض4</th>
+
+        <th>انتهاء العرض</th>
+
+    </tr>
+
+</thead>
+
+            </thead>
+
+            <tbody id="offersTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+<div id="companiesModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>🏢 اختيار الشركات</h3>
+
+        <div id="companiesList">
+
+        </div>
+
+        <button id="saveCompaniesBtn">
+
+            تم
+
+        </button>
+
+    </div>
+
+</div>
+
+<div id="provincesModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>📍 اختيار المحافظات</h3>
+
+        <div id="provincesList">
+
+        </div>
+
+        <button id="saveProvincesBtn">
+
+            تم
+
+        </button>
+
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="../app.js"></script>
+
+</body>
+</html>
