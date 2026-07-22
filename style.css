@@ -991,15 +991,19 @@ body{
 ========================================== */
 
 .toolbar{
-    width:100%;
     display:flex;
-    flex-wrap:wrap;
-    gap:10px;
     justify-content:center;
-    align-items:center;
-    box-sizing:border-box;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:10px 0;
 }
 
+.toolbar .btn{
+    width:170px;      /* صغر العرض */
+    min-width:170px;
+    padding:10px 15px;
+    font-size:16px;
+}
 .btn{
     display:inline-flex;
     align-items:center;
