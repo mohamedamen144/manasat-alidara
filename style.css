@@ -999,10 +999,10 @@ body{
 }
 
 .toolbar .btn{
-    width:120px;      /* صغر العرض */
-    min-width:120px;
+    width:100px;      /* صغر العرض */
+    min-width:100px;
     padding:10px 15px;
-    font-size:12px;
+    font-size:10px;
 }
 .btn{
     display:inline-flex;
