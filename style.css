@@ -991,10 +991,13 @@ body{
 ========================================== */
 
 .toolbar{
+    width:100%;
     display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
     align-items:center;
-    gap:10px;
-    margin-bottom:20px;
+    box-sizing:border-box;
 }
 
 .btn{
