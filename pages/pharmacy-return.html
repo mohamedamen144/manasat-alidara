@@ -1,103 +1,91 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>فاتورة الاسترجاع</title>
-
-    <link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
 <div class="page">
 
     <!-- رأس الصفحة -->
 
     <div class="top-bar">
 
-    <div class="logo">
-        ↩️ فاتورة الاسترجاع
+        <div class="logo">
+            ↩️ فاتورة الاسترجاع
+        </div>
+
+        <div class="user-box">
+
+            <button
+                class="logout-btn"
+                onclick="window.location.href='dashboard.html'">
+
+                ⬅ العودة للرئيسية
+
+            </button>
+
+        </div>
+
     </div>
 
-    <div class="user-box">
-
-        <button
-            class="logout-btn"
-            onclick="window.location.href='dashboard.html'">
-
-            ⬅ العودة للرئيسية
-
-        </button>
-
-    </div>
-
-</div>
-
-<div class="tabs">
-
-    <a href="pharmacy-sales.html" class="tab-btn">
-        🧾 فاتورة المبيعات
-    </a>
-
-    <a href="pharmacy-return.html" class="tab-btn active">
-        ↩️ فاتورة الاسترجاع
-    </a>
-
-</div>
-
-    <!-- شريط الأدوات -->
+    <!-- قائمة المبيعات -->
 
     <div class="toolbar">
 
-    <button class="btn import">
-        📥 استيراد Excel
-    </button>
+        <button class="nav-btn"
+            onclick="location.href='pharmacy-sales.html'">
+            🧾 فاتورة المبيعات
+        </button>
 
-    <button class="btn export">
-        📤 تصدير Excel
-    </button>
+        <button class="nav-btn active"
+            onclick="location.href='pharmacy-return.html'">
+            ↩️ فاتورة الاسترجاع
+        </button>
 
-    <button class="btn pdf">
-        📄 تصدير PDF
-    </button>
+        <button class="nav-btn"
+            onclick="location.href='accounts.html'">
+            💰 الحسابات
+        </button>
 
-</div>
+        <button class="nav-btn"
+            onclick="location.href='stock-movement.html'">
+            🔄 حركة المادة
+        </button>
 
+        <button class="nav-btn"
+            onclick="location.href='stock.html'">
+            📦 الخزين
+        </button>
+
+    </div>
 
     <!-- بيانات الفاتورة -->
 
     <div class="card">
 
-    <div class="card-title">
-        🧾 بيانات الفاتورة
+        <div class="card-title">
+            ↩️ بيانات فاتورة الاسترجاع
+        </div>
+
+        <div class="form-grid">
+
+            <div class="field">
+                <label>رقم الفاتورة</label>
+                <input type="text">
+            </div>
+
+            <div class="field">
+                <label>تاريخ الفاتورة</label>
+                <input type="date">
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="form-grid">
+    <!-- بيانات العميل -->
 
-    <div class="field">
-    <label>رقم الفاتورة</label>
-    <input type="text">
-</div>
+    <div class="card">
 
-    <div class="field">
-    <label>تاريخ الفاتورة</label>
-    <input type="date">
-</div>
+        <div class="card-title">
+            🏥 بيانات العميل
+        </div>
 
-</div>
-
-   <!-- بيانات العميل -->
-
-<div class="card">
-
-    <div class="card-title">
-        🏥 بيانات العميل
-    </div>
-
-    <div class="form-grid">
+        <div class="form-grid">
 
         <div class="field">
             <label>الصيدلية</label>
@@ -614,10 +602,10 @@ document.querySelector(".save-invoice-table-view").addEventListener("click", () 
 
     });
 
-    localStorage.setItem(
-        "returnInvoiceProductsView",
-        JSON.stringify(settings)
-    );
+   localStorage.setItem(
+    "returnInvoiceProductsView",
+    JSON.stringify(settings)
+);
 
     invoiceMenu.classList.remove("show");
     alert("تم حفظ طريقة عرض جدول الفاتورة");
@@ -627,9 +615,9 @@ document.querySelector(".save-invoice-table-view").addEventListener("click", () 
 // استرجاع طريقة العرض
 window.addEventListener("DOMContentLoaded", () => {
 
-    const saved = JSON.parse(
-        localStorage.getItem("returnInvoiceProductsView")
-    );
+   const saved = JSON.parse(
+    localStorage.getItem("returnInvoiceProductsView")
+);
 
     if (!saved) return;
 
